@@ -31,8 +31,10 @@
 \*------------------------------------*/
 
 .mondrian-canvas {
-	width: 372px;
-	height: 449px;
+	width: 100%;
+	max-width: 372px;
+	height: 100%;
+	max-height: 449px;
 	border: 5px solid #020001;
 	background-color: #fffdfe;
 	transform-style: preserve-3d;
@@ -56,25 +58,30 @@
 \*------------------------------------*/
 
 .mondrian-canvas__top {
-	height: 306px;
+	height: 72%;
 	@extend .clearfix;
 }
 
-	.top__col-left {
-		@include column(77px);
+	.top__col {
+		height: 100%;
+	}
+
+	.top__col--left {
+		height: 100%;
+		@include column(23%);
 	}
 
 		.block--1 {
-			height: 78px;
+			height: 31%;
 		}
 
 		.block--2 {
-			height: calc(306px - 78px);
+			height: 69%;
 		}
 
-	.top__col-right {
+	.top__col--right {
 		height: 100%;
-		@include column(285px);
+		@include column(77%);
 	}
 
 		.block--3 {
@@ -87,7 +94,7 @@
 \*------------------------------------*/
 
 .mondrian-canvas__bottom {
-	height: 135px;
+	height: 28%;
 	@extend .clearfix;
 }
 
@@ -96,7 +103,7 @@
 	}
 
 	.bottom__col--1 {
-		@include column(77px);
+		@include column(23%);
 	}
 
 		.block--4 {
@@ -105,7 +112,7 @@
 		}
 
 	.bottom__col--2 {
-		@include column(218px);
+		@include column(60%);
 	}
 
 		.block--5 {
@@ -113,15 +120,15 @@
 		}
 
 	.bottom__col--3 {
-		@include column(67px);
+		@include column(17%);
 	}
 
 		.block--6 {
-			height: 61px;
+			height: 45%;
 		}
 
 		.block--7 {
-			height: 74px;
+			height: 55%;
 			background-color: #fefe00;
 		}
 
