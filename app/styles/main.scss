@@ -1,31 +1,139 @@
 // bower:scss
 // endbower
 
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+@mixin column($width) {
+	float: left;
+	width: $width;
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+/*------------------------------------*\
+  #PAGE WRAPPER
+\*------------------------------------*/
+
+.page-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+/*------------------------------------*\
+  #CANVAS
+\*------------------------------------*/
+
+.mondrian-canvas {
+	width: 372px;
+	height: 449px;
+	border: 5px solid #020001;
+	background-color: #fffdfe;
+}
+
+/*------------------------------------*\
+  #BLOCKS
+\*------------------------------------*/
+
+.block {
+	border: 6px solid #020001;
+}
+
+.block--largebottom {
+	border-bottom-width: 14px;
+}
+
+/*------------------------------------*\
+  #TOP ROW
+\*------------------------------------*/
+
+.mondrian-canvas__top {
+	height: 306px;
+	@extend .clearfix;
+}
+
+	.top__col-left {
+		@include column(77px);
+	}
+
+		.block--1 {
+			height: 78px;
+		}
+
+		.block--2 {
+			height: calc(306px - 78px);
+		}
+
+	.top__col-right {
+		height: 100%;
+		@include column(285px);
+	}
+
+		.block--3 {
+			height: inherit;
+			background-color: #fe0000;
+		}
+
+/*------------------------------------*\
+  #BOTTOM ROW
+\*------------------------------------*/
+
+.mondrian-canvas__bottom {
+	height: 135px;
+	@extend .clearfix;
+}
+
+	.bottom__col {
+		height: 100%;
+	}
+
+	.bottom__col--1 {
+		@include column(77px);
+	}
+
+		.block--4 {
+			height: inherit;
+			background-color: #0d0caf;
+		}
+
+	.bottom__col--2 {
+		@include column(218px);
+	}
+
+		.block--5 {
+			height: inherit;
+		}
+
+	.bottom__col--3 {
+		@include column(67px);
+	}
+
+		.block--6 {
+			height: 61px;
+		}
+
+		.block--7 {
+			height: 74px;
+			background-color: #fefe00;
+		}
+
+
+/*------------------------------------*\
+  #HELPERS
+\*------------------------------------*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
 }
