@@ -1,14 +1,9 @@
 'use strict';
 
 (function() {
-	function moveCanvas(e) {
-		const $mondrian = document.getElementById('js-mondrian');
-		const pageXPos = e.pageX / 10;
-		const pageYPos = e.pageY / 10;
-	}
+	const $mondrian = document.getElementById('js-mondrian');
 
 	function init() {
-		document.addEventListener('mousemove', moveCanvas);
 	}
 
 	function ready(fn) {
