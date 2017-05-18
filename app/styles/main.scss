@@ -76,7 +76,7 @@
 	}
 
 	.block--3 {
-		height: 100% - 50 - 22 + (1 - .36);
+		height: 100% - 50 - 22 + .01;
 		background-color: #0d0caf;
 	}
 
@@ -95,7 +95,7 @@
 	}
 
 	.col--right__bottom {
-		height: 100% - 50 - 22 + (1 - .36);
+		height: 100% - 50 - 22 + .01;
 		@extend .clearfix;
 	}
 
