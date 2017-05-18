@@ -27,25 +27,21 @@
 <![endif]-->
     <main class="page-wrapper">
         <div class="mondrian-canvas" id="js-mondrian">
-            <div class="mondrian-canvas__top">
-                <div class="top__col top__col--left">
-                    <div class="block block--1 block--largebottom"></div>
-                    <div class="block block--2"></div>
-                </div>
-                <div class="top__col top__col--right">
-                    <div class="block block--3"></div>
-                </div>
+            <div class="mondrian-canvas__col mondrian-canvas__col--left">
+				<div class="block block--1"></div>
+				<div class="block block--2"></div>
+				<div class="block block--3"></div>
             </div>
-            <div class="mondrian-canvas__bottom">
-                <div class="bottom__col bottom__col--1">
-                    <div class="block block--4"></div>
-                </div>
-                <div class="bottom__col bottom__col--2">
-                    <div class="block block--5"></div>
-                </div>
-                <div class="bottom__col bottom__col--3">
-                    <div class="block block--6"></div>
-                    <div class="block block--7"></div>
+
+            <div class="mondrian-canvas__col mondrian-canvas__col--right">
+                <div class="block block--4"></div>
+
+                <div class="col--right__bottom">
+                	<div class="bottom__block block block--5"></div>
+                	<div class="bottom__block bottom__block--group">
+                	    <div class="block block--6"></div>
+                	    <div class="block block--7"></div>
+                	</div>
                 </div>
             </div>
         </div>
