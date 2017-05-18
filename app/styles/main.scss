@@ -8,14 +8,6 @@
 }
 
 /*------------------------------------*\
-  #MIXINS
-\*------------------------------------*/
-@mixin column($width) {
-	float: left;
-	width: $width;
-}
-
-/*------------------------------------*\
   #PAGE WRAPPER
 \*------------------------------------*/
 
@@ -38,8 +30,15 @@
 	max-height: 449px;
 	border: 6px solid #020001;
 	background-color: #fffdfe;
+	perspective: 372px;
+	transition: all .1s linear;
+	transform-style: preserve-3d;
 	@extend .clearfix;
 }
+
+	.mondrian-canvas--inactive {
+		transform: rotateY(0) rotateX(0) !important;
+	}
 
 /*------------------------------------*\
   #COLUMNS
@@ -129,8 +128,8 @@
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
 }
 
 .clearfix:after {
